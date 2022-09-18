@@ -10,7 +10,7 @@ const bootstrap = async (module: any) => {
   const app = express();
   const nestApp = await NestFactory.create(module, new ExpressAdapter(app));
 
-  nestApp.setGlobalPrefix('/.netlify/functions/server');
+  nestApp.setGlobalPrefix('/functions/server');
   nestApp.enableCors();
   nestApp.use(helmet());
   nestApp.useGlobalPipes(
